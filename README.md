@@ -52,7 +52,7 @@ This equation states that the value of a state under an optimal policy is the ma
 
 ### Policy Function
 
-The **policy function** \(\pi^*(s)\) maps states to actions and determines the best action to take in each state under the optimal policy:
+The **policy function** $\pi^*(s)$ maps states to actions and determines the best action to take in each state under the optimal policy:
 
 $$\pi^\ast(s) = \arg\max_a \sum_{s'} P(s' | s, a) \left[ R(s, a, s') + \gamma V^*(s') \right]$$
 
