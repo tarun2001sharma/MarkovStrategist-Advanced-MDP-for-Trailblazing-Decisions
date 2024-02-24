@@ -46,7 +46,7 @@ In addition to the basic value function, **V(s)**, which estimates the expected 
 
 ### Action-Value Function
 
-The **action-value function** \(Q^\pi(s, a)\) represents the expected return starting from state **s**, taking an action **a**, and thereafter following policy **π**. It is defined as:
+The **action-value function** $Q^\pi(s, a)$ represents the expected return starting from state **s**, taking an action **a**, and thereafter following policy **π**. It is defined as:
 
 $$Q^\pi(s, a) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s, A_0 = a \right]$$
 
@@ -54,7 +54,7 @@ This function is crucial for evaluating the expected effectiveness of each actio
 
 ### Optimality Criteria
 
-For an MDP, we aim to find an **optimal policy** \(π^*\) that yields the highest expected return from all states. The optimal action-value function \(Q^*(s, a)\) under an optimal policy is defined as:
+For an MDP, we aim to find an **optimal policy** $π^*$ that yields the highest expected return from all states. The optimal action-value function $Q^*(s, a)$ under an optimal policy is defined as:
 
 $$Q^*(s, a) = \max_{π} E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s, A_0 = a \right]$$
 
@@ -62,13 +62,13 @@ The **optimal value function** and **optimal action-value function** are interco
 
 ### Bellman Optimality Equations
 
-The **Bellman optimality equation** for \(V^*(s)\) is an extension of the Bellman equation for value functions, providing a recursive relationship for the optimal value function:
+The **Bellman optimality equation** for $V^*(s)$ is an extension of the Bellman equation for value functions, providing a recursive relationship for the optimal value function:
 
 ```math
 V^*(s) = \max_a \left[ \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma V^*(s')) \right]
 ```
 
-Similarly, the Bellman optimality equation for \(Q^*(s, a)\) relates the optimal action-value function to the optimal value function:
+Similarly, the Bellman optimality equation for $Q^*(s, a)$ relates the optimal action-value function to the optimal value function:
 
 ```math
 Q^*(s, a) = \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma \max_{a'} Q^*(s', a'))
