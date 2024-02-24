@@ -52,6 +52,53 @@ V^*(s) = \max_{a} \left( \sum_{s'} P(s' \mid s, a) [ R(s, a, s') + \gamma V^*(s'
 
 This equation states that the value of a state under an optimal policy is the maximum expected return achievable, considering immediate rewards and the discounted value of future states.
 
+
+In addition to the basic value function, **V(s)**, which estimates the expected return starting from state **s** and following a specific policy **π**, there are other critical functions and criteria to consider:
+
+### Action-Value Function
+
+The **action-value function** \(Q^\pi(s, a)\) represents the expected return starting from state **s**, taking an action **a**, and thereafter following policy **π**. It is defined as:
+
+$$Q^\pi(s, a) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s, A_0 = a \right]$$
+
+This function is crucial for evaluating the expected effectiveness of each action in a given state.
+
+### Optimality Criteria
+
+For an MDP, we aim to find an **optimal policy** \(π^*\) that yields the highest expected return from all states. The optimal action-value function \(Q^*(s, a)\) under an optimal policy is defined as:
+
+$$Q^*(s, a) = \max_{π} E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s, A_0 = a \right]$$
+
+The **optimal value function** and **optimal action-value function** are interconnected through the Bellman optimality equations.
+
+## Bellman Optimality Equations
+
+The **Bellman optimality equation** for \(V^*(s)\) is an extension of the Bellman equation for value functions, providing a recursive relationship for the optimal value function:
+
+$$V^*(s) = \max_a \left[ \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma V^*(s')) \right]$$
+
+Similarly, the Bellman optimality equation for \(Q^*(s, a)\) relates the optimal action-value function to the optimal value function:
+
+$$Q^*(s, a) = \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma \max_{a'} Q^*(s', a'))$$
+
+These equations are foundational for algorithms that seek to find optimal policies, such as Q-learning and value iteration.
+
+## Exploration vs. Exploitation
+
+In the context of MDPs and learning optimal policies, **exploration** involves trying different actions to discover their effects, while **exploitation** involves choosing the best-known action to maximize the reward. Balancing these two aspects is crucial for effectively learning in uncertain environments.
+
+### ε-greedy Strategy
+
+An ε-greedy strategy is a common approach to balance exploration and exploitation by choosing to explore with probability ε and exploit the best-known action with probability 1-ε. This strategy ensures that the decision-maker does not prematurely converge to a suboptimal policy by continuously exploring alternative actions.
+
+## Markov Property and Decision Epochs
+
+MDPs are characterized by the **Markov property**, which states that the future state depends only on the current state and action, not on the past states or actions. This property simplifies the analysis and solution of decision processes.
+
+**Decision epochs** refer to the points in time at which decisions are made. In discrete-time MDPs, decisions are made at each step within a finite or infinite horizon. The choice of horizon affects the formulation and solution of an MDP, with infinite horizon problems often involving discounting to ensure finite expected returns.
+
+
+
 ### Policy Function
 
 The **policy function** $\pi^*(s)$ maps states to actions and determines the best action to take in each state under the optimal policy:
