@@ -27,18 +27,18 @@ Markov Decision Processes are grounded in probabilistic mathematics, offering a 
 
 ### Transition Probabilities
 
-Transition probabilities, denoted as $P(s' | s, a)$, represent the probability of transitioning from state \(s\) to state \(s'\) given action \(a\). These probabilities are core to the Markov property, which posits that the future state depends only on the current state and the action taken, not on the sequence of events that led to the current state.
+Transition probabilities, denoted as $P(s' | s, a)$, represent the probability of transitioning from state $s$ to state $s'$ given action $a$. These probabilities are core to the Markov property, which posits that the future state depends only on the current state and the action taken, not on the sequence of events that led to the current state.
 
 ### Reward Function
 
-The reward function, \(R(s, a, s')\), defines the immediate reward received after transitioning from state \(s\) to state \(s'\) due to action \(a\). The objective in an MDP is often to maximize the cumulative reward over time.
+The reward function, $R(s, a, s')$, defines the immediate reward received after transitioning from state $s$ to state $s'$ due to action $a$. The objective in an MDP is often to maximize the cumulative reward over time.
 
 ### Value Functions
 
 
 The **value function** \(V(s)\) represents the expected cumulative reward from state \(s\), under a particular policy \(\pi\), across all future time steps. It is defined as:
 
-\[V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s \right]\]
+$$V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s \right]$$
 
 where \(\gamma\) is the discount factor, determining the present value of future rewards.
 
