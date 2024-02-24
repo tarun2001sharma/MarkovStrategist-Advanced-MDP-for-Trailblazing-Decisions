@@ -46,7 +46,9 @@ where $\gamma$ is the discount factor, determining the present value of future r
 
 The **Bellman equation** provides a recursive decomposition to calculate the value function. For the optimal value function $V^*(s)$, it is expressed as:
 
-$$V^*(s) = \max_{a} \left( \sum_{s'} P(s' \mid s, a) [ R(s, a, s') + \gamma V^*(s') ] \right)$$
+```math
+V^*(s) = \max_{a} \left( \sum_{s'} P(s' \mid s, a) [ R(s, a, s') + \gamma V^*(s') ] \right)
+```
 
 This equation states that the value of a state under an optimal policy is the maximum expected return achievable, considering immediate rewards and the discounted value of future states.
 
