@@ -35,10 +35,10 @@ The reward function, \(R(s, a, s')\), defines the immediate reward received afte
 
 ### Value Functions
 
+
 The **value function** \(V(s)\) represents the expected cumulative reward from state \(s\), under a particular policy \(\pi\), across all future time steps. It is defined as:
 
-\[V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s 
-ight]\]
+\[V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s \right]\]
 
 where \(\gamma\) is the discount factor, determining the present value of future rewards.
 
