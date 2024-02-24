@@ -42,17 +42,6 @@ $$V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s \right]$$
 
 where $\gamma$ is the discount factor, determining the present value of future rewards.
 
-### Bellman Equation
-
-The **Bellman equation** provides a recursive decomposition to calculate the value function. For the optimal value function $V^*(s)$, it is expressed as:
-
-```math
-V^*(s) = \max_{a} \left( \sum_{s'} P(s' \mid s, a) [ R(s, a, s') + \gamma V^*(s') ] \right)
-```
-
-This equation states that the value of a state under an optimal policy is the maximum expected return achievable, considering immediate rewards and the discounted value of future states.
-
-
 In addition to the basic value function, **V(s)**, which estimates the expected return starting from state **s** and following a specific policy **π**, there are other critical functions and criteria to consider:
 
 ### Action-Value Function
@@ -71,17 +60,31 @@ $$Q^*(s, a) = \max_{π} E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s,
 
 The **optimal value function** and **optimal action-value function** are interconnected through the Bellman optimality equations.
 
-## Bellman Optimality Equations
+### Bellman Optimality Equations
 
 The **Bellman optimality equation** for \(V^*(s)\) is an extension of the Bellman equation for value functions, providing a recursive relationship for the optimal value function:
 
-$$V^*(s) = \max_a \left[ \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma V^*(s')) \right]$$
+```math
+V^*(s) = \max_a \left[ \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma V^*(s')) \right]
+```
 
 Similarly, the Bellman optimality equation for \(Q^*(s, a)\) relates the optimal action-value function to the optimal value function:
 
-$$Q^*(s, a) = \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma \max_{a'} Q^*(s', a'))$$
+```math
+Q^*(s, a) = \sum_{s'} P(s' | s, a) (R(s, a, s') + \gamma \max_{a'} Q^*(s', a'))
+```
 
 These equations are foundational for algorithms that seek to find optimal policies, such as Q-learning and value iteration.
+
+
+### Policy Function
+
+The **policy function** $\pi^*(s)$ maps states to actions and determines the best action to take in each state under the optimal policy:
+
+$$\pi^\ast(s) = \arg\max_a \sum_{s'} P(s' | s, a) \left[ R(s, a, s') + \gamma V^*(s') \right]$$
+
+This optimal policy maximizes the expected cumulative reward from each state over time.
+
 
 ## Exploration vs. Exploitation
 
@@ -97,15 +100,6 @@ MDPs are characterized by the **Markov property**, which states that the future 
 
 **Decision epochs** refer to the points in time at which decisions are made. In discrete-time MDPs, decisions are made at each step within a finite or infinite horizon. The choice of horizon affects the formulation and solution of an MDP, with infinite horizon problems often involving discounting to ensure finite expected returns.
 
-
-
-### Policy Function
-
-The **policy function** $\pi^*(s)$ maps states to actions and determines the best action to take in each state under the optimal policy:
-
-$$\pi^\ast(s) = \arg\max_a \sum_{s'} P(s' | s, a) \left[ R(s, a, s') + \gamma V^*(s') \right]$$
-
-This optimal policy maximizes the expected cumulative reward from each state over time.
 
 
 ## Project Examples
