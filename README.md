@@ -232,3 +232,6 @@ This output indicates the optimal actions for states `State1` and `State2` and p
 
 Note: In scenarios modeled with only chance nodes, the output will focus solely on state values, as no explicit policy decisions are required.
 
+## License
+This project is open source and available under the [MIT License](LICENSE).
+
