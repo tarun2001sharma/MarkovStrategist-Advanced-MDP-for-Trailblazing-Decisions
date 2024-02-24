@@ -38,8 +38,6 @@ The reward function, $R(s, a, s')$, defines the immediate reward received after 
 
 The **value function** $V(s)$ represents the expected cumulative reward from state $s$, under a particular policy $\pi$, across all future time steps. It is defined as:
 
-$$V^*(s) = \max_a \sum_{s'} P(s' | s, a) \left[ R(s, a, s') + \gamma V^*(s') \right]$$
-
 $$V^\pi(s) = E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s \right]$$
 
 where $\gamma$ is the discount factor, determining the present value of future rewards.
@@ -48,6 +46,7 @@ where $\gamma$ is the discount factor, determining the present value of future r
 
 The **Bellman equation** provides a recursive decomposition to calculate the value function. For the optimal value function $V^*(s)$, it is expressed as:
 
+$$V^*(s) = \max_a \sum_{s'} P(s' \mid s, a) \left[ R(s, a, s') + \gamma V^*(s') \right]$$
 
 This equation states that the value of a state under an optimal policy is the maximum expected return achievable, considering immediate rewards and the discounted value of future states.
 
