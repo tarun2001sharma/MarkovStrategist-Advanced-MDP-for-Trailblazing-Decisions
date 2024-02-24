@@ -54,7 +54,7 @@ This function is crucial for evaluating the expected effectiveness of each actio
 
 ### Optimality Criteria
 
-For an MDP, we aim to find an **optimal policy** $π^*$ that yields the highest expected return from all states. The optimal action-value function $Q^*(s, a)$ under an optimal policy is defined as:
+For an MDP, we aim to find an **optimal policy** $π^* $ that yields the highest expected return from all states. The optimal action-value function $Q^*(s, a)$ under an optimal policy is defined as:
 
 $$Q^*(s, a) = \max_{π} E \left[ \sum_{t=0}^{\infty} \gamma^t R_{t+1} | S_0 = s, A_0 = a \right]$$
 
