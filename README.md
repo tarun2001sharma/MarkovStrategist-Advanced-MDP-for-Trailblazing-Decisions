@@ -27,7 +27,7 @@ Markov Decision Processes are grounded in probabilistic mathematics, offering a 
 
 ### Transition Probabilities
 
-Transition probabilities, denoted as \(P(s' | s, a)\), represent the probability of transitioning from state \(s\) to state \(s'\) given action \(a\). These probabilities are core to the Markov property, which posits that the future state depends only on the current state and the action taken, not on the sequence of events that led to the current state.
+Transition probabilities, denoted as $P(s' | s, a)$, represent the probability of transitioning from state \(s\) to state \(s'\) given action \(a\). These probabilities are core to the Markov property, which posits that the future state depends only on the current state and the action taken, not on the sequence of events that led to the current state.
 
 ### Reward Function
 
